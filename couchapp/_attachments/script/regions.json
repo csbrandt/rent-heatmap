@@ -1,0 +1,208 @@
+[{
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-84.39, 33.755]
+   },
+   "properties": {
+      "region": "atlanta"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-97.75, 30.25]
+   },
+   "properties": {
+      "region": "austin"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-71.063611, 42.358056]
+   },
+   "properties": {
+      "region": "boston"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-87.684722, 41.836944]
+   },
+   "properties": {
+      "region": "chicago"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-96.796667, 32.775833]
+   },
+   "properties": {
+      "region": "dallas"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-104.881105, 39.76185]
+   },
+   "properties": {
+      "region": "denver"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-83.045833, 42.331389]
+   },
+   "properties": {
+      "region": "detroit"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-95.383056, 29.762778]
+   },
+   "properties": {
+      "region": "houston"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-115.136389, 36.175]
+   },
+   "properties": {
+      "region": "lasvegas"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-118.25, 34.05]
+   },
+   "properties": {
+      "region": "losangeles"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-80.208889, 25.775278]
+   },
+   "properties": {
+      "region": "miami"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-93.266667, 44.983333]
+   },
+   "properties": {
+      "region": "minneapolis"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-74.0059, 40.7127]
+   },
+   "properties": {
+      "region": "newyork"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-117.78, 33.67]
+   },
+   "properties": {
+      "region": "orangecounty"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-75.166667, 39.95]
+   },
+   "properties": {
+      "region": "philadelphia"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-112.066667, 33.45]
+   },
+   "properties": {
+      "region": "phoenix"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-122.681944, 45.52]
+   },
+   "properties": {
+      "region": "portland"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-78.633333, 35.766667]
+   },
+   "properties": {
+      "region": "raleigh"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-121.468889, 38.555556]
+   },
+   "properties": {
+      "region": "sacramento"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-117.1625, 32.715]
+   },
+   "properties": {
+      "region": "sandiego"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-122.333056, 47.609722]
+   },
+   "properties": {
+      "region": "seattle"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-122.280278, 37.708333]
+   },
+   "properties": {
+      "region": "sfbay"
+   }
+}, {
+   "type": "Feature",
+   "geometry": {
+      "type": "Point",
+      "coordinates": [-77.016389, 38.904722]
+   },
+   "properties": {
+      "region": "washingtondc"
+   }
+}]

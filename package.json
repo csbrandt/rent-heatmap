@@ -1,0 +1,26 @@
+{
+  "name": "rent-heatmap",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "setup": "npm install & npm install --prefix ./couchapp/_attachments",
+    "push": "couchapp push dist/couchapp http://localhost:5984/rent-heatmap"
+  },
+  "author": "csbrandt",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "coffee-script": "^1.10.0",
+    "eslint": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "*",
+    "gulp-cssmin": "*",
+    "gulp-eslint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.3",
+    "rimraf": "^2.5.2",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
