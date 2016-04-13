@@ -3,11 +3,12 @@ var _ = require('lodash');
 var Backbone = require('backbone');
 var extent = require('turf-extent');
 var nearest = require('turf-nearest');
-var regions = require('../regions.json');
 var point = require('turf-point');
 var featurecollection = require('turf-featurecollection');
+var regions = require('../regions.json');
 var BaseMap = require('./map.js');
 var Timeline = require('./timeline.js');
+var Stats = require('./stats.js');
 require('leaflet');
 require('heatmap.js');
 var HeatmapOverlay = require('../vendor/leaflet-heatmap.js');
@@ -42,6 +43,11 @@ module.exports = Backbone.View.extend({
          id: 'map-canvas'
       });
 
+      this.stats = new Stats({
+         el: '#stats',
+         model: this.model
+      });
+
       this.collection.on('reset', this.update, this);
       this.timeline.model.on('change:selected', this.handleDateSelect, this);
       this.map.model.on('change:center', _.debounce(this.handleCenterChange, 500), this);
@@ -73,8 +79,10 @@ module.exports = Backbone.View.extend({
    },
    setHeatmap: function(features, year) {
       var heatmapData = this.getHeatmap(features, year);
+      this.model.set('min', Math.round(_.min(_.map(heatmapData, 'average'))));
+      this.model.set('max', Math.round(_.max(_.map(heatmapData, 'average'))));
       this.heatmapLayer.setData({
-         max: _.max(_.map(heatmapData, 'average')),
+         max: this.model.get('max'),
          data: heatmapData
       });
    },
@@ -95,6 +103,7 @@ module.exports = Backbone.View.extend({
    handleCenterChange: function(model, center) {
       var nearestRegion = nearest(point([center.lng, center.lat]), featurecollection(regions));
       this.model.set('region', nearestRegion.properties.region);
+      this.model.set('displayName', nearestRegion.properties.displayName);
    }
 
 });
