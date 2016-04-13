@@ -36,7 +36,8 @@ module.exports = Backbone.View.extend({
       this.heatmapLayer = new HeatmapOverlay(heatmapConfig);
 
       this.timeline = new Timeline({
-         id: 'heatmap-timeline'
+         id: 'heatmap-timeline',
+         model: this.model
       });
 
       this.map = new BaseMap({
@@ -49,12 +50,13 @@ module.exports = Backbone.View.extend({
       });
 
       this.collection.on('reset', this.update, this);
-      this.timeline.model.on('change:selected', this.handleDateSelect, this);
+      this.timeline.model.on('change:selectedYear', this.handleDateSelect, this);
       this.map.model.on('change:center', _.debounce(this.handleCenterChange, 500), this);
    },
    update: function(features) {
       var years = this.getUniqYears(features.toJSON());
       var bbox = extent(featurecollection(features.toJSON()));
+      var selectedYear = (years.indexOf(this.model.get('selectedYear')) === -1) ? years[0] : this.model.get('selectedYear');
 
       this.map.model.set({
          bounds: [[bbox[1], bbox[0]], [bbox[3], bbox[2]]],
@@ -64,7 +66,7 @@ module.exports = Backbone.View.extend({
       this.setHeatmap(features.toJSON(), years[0]);
 
       this.timeline.model.set({
-         selected: years[0],
+         selectedYear: selectedYear,
          dates: years
       });
    },
@@ -94,7 +96,7 @@ module.exports = Backbone.View.extend({
    handleDateSelect: function(model, date) {
       if (date instanceof Date) {
          this.timeline.model.set({
-            selected: date.getFullYear()
+            selectedYear: date.getFullYear()
          });
 
          this.setHeatmap(this.collection.toJSON(), date.getFullYear());

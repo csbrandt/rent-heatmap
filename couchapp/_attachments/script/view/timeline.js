@@ -5,7 +5,6 @@ var d3 = require('d3');
 require('../vendor/d3-timeline.js');
 
 module.exports = Backbone.View.extend({
-   model: new Backbone.Model(),
    initialize: function() {
       this.chart = d3.timeline()
          .rotateTicks(45)
@@ -17,10 +16,11 @@ module.exports = Backbone.View.extend({
          })
          .click(function (d, i, datum) {
             var date = new Date(d.starting_time);
-            this.model.set('selected', new Date(date.setFullYear(date.getFullYear() + 1)));
+            this.model.set('selectedYear', new Date(date.setFullYear(date.getFullYear() + 1)));
          }.bind(this));
 
-         this.model.on('change', this.render, this);
+         this.model.on('change:dates', this.render, this);
+         this.model.on('change:selectedYear', this.render, this);
    },
    render: function() {
       var dates = this.model.get('dates');
@@ -29,7 +29,7 @@ module.exports = Backbone.View.extend({
             return {
                starting_time: Date.parse(date),
                display: 'circle',
-               id: (date === this.model.get('selected')) ? 'selected' : null
+               id: (date === this.model.get('selectedYear')) ? 'selected' : null
             };
          }.bind(this))
       }];
